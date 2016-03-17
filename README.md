@@ -39,4 +39,9 @@ or you can visit our wiki also:
 https://github.com/spheras/messic/wiki
 
 
+To run the project for development:
+
+* Run INSTALL target at root directory
+* Run the main class at src/messic-service/src/main/java/org/messic/service/MessicMain.java with a directory as a parameter  
+
 See you!
