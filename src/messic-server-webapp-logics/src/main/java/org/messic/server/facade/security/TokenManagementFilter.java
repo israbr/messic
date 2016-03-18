@@ -63,6 +63,7 @@ public class TokenManagementFilter
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
+        //TODO: kill this warning
         if ( !requiresAuthentication( request, response ) )
         {
             chain.doFilter( request, response );

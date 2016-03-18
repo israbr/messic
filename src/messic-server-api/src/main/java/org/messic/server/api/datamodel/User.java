@@ -25,6 +25,8 @@ import org.jsondoc.core.annotation.ApiObject;
 import org.jsondoc.core.annotation.ApiObjectField;
 import org.messic.server.datamodel.MDOUser;
 
+import java.util.List;
+
 @XmlRootElement
 @ApiObject( name = "User", description = "User of Messic" )
 public class User
@@ -56,12 +58,29 @@ public class User
     @ApiObjectField( description = "flag to know the user content is allowed to be shared by a DLNA protocol" )
     private Boolean allowDLNA = true; // true by default
 
+    private final List<User> users;
+
     /**
      * Default constructor
      */
     public User()
     {
 
+    }
+
+    public User( Long sid, String name, String avatar_b64, String email, String login, String password,
+                 Boolean administrator, Boolean allowStatistics, Boolean allowDLNA,  List<User> users )
+    {
+        this.sid = sid;
+        this.name = name;
+        this.avatar_b64 = avatar_b64;
+        this.email = email;
+        this.login = login;
+        this.password = password;
+        this.administrator = administrator;
+        this.allowStatistics = allowStatistics;
+        this.allowDLNA = allowDLNA;
+        this.users = users;
     }
 
     /**

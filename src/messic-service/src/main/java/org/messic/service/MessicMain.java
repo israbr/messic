@@ -49,7 +49,7 @@ import org.osgi.framework.launch.FrameworkFactory;
 public class MessicMain
 {
     /** This is important to maintain because some others wait to this message to know that messic have been started */
-    private static String END_LOG = "[MESSIC] Service started";
+    private static final String END_LOG = "[MESSIC] Service started";
 
     /** messic config */
     private static MessicConfig mc = new MessicConfig();
@@ -118,7 +118,7 @@ public class MessicMain
 
     /**
      * Closing Osgi Framework Event. This the place to do things when the framework is closing.
-     * 
+     *
      * @param framework {@link Framework}
      */
     private static void closingEvent( Framework framework )
@@ -148,7 +148,7 @@ public class MessicMain
 
     /**
      * Stop the Osgi framework
-     * 
+     *
      * @param framework {@link Framework} to stop
      */
     private static void stopFramework( Framework framework )
@@ -171,7 +171,7 @@ public class MessicMain
 
     /**
      * Create an osgi framework
-     * 
+     *
      * @return {@link Framework} osgi framework created
      * @throws BundleException
      */
@@ -186,7 +186,7 @@ public class MessicMain
 
     /**
      * Install the bundles at the osgi framework.
-     * 
+     *
      * @param framework {@link Framework} to install bundles
      * @throws BundleException
      */
@@ -215,7 +215,7 @@ public class MessicMain
     /**
      * Install all the bundles found at a certain folder. It install the bundles sorted by the name of the file. If any
      * subfolder found, then try to install also.
-     * 
+     *
      * @param context {@link BundleContext} context to install bundles
      * @param folder {@link String} folder path to search bundles
      * @return List<Bundle/> list of installed bundles
@@ -407,7 +407,7 @@ public class MessicMain
 
     /**
      * From apache camel Checks to see if a specific port is available.
-     * 
+     *
      * @param port the port to check for availability
      */
     public static boolean isPortAvailable( int port )
@@ -451,7 +451,7 @@ public class MessicMain
 
     /**
      * Get the Felix configuration based on the config.properties stored at ./felix/conf folder
-     * 
+     *
      * @return Map<String,String/> configuration properties
      */
     private static Map<String, String> getFelixConfig()

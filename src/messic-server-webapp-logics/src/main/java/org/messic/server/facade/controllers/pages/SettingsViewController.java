@@ -1,6 +1,7 @@
 package org.messic.server.facade.controllers.pages;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -51,7 +52,8 @@ public class SettingsViewController
 
         if ( user == null )
         {
-            user = new User();
+            user = new User( 1L, "usuarioGenresos", "", "", "user", "2345", false, false, false,
+                             Collections.<User>emptyList() );
             if ( daoUser.getCount() == 0 )
             {
                 user.setAdministrator( true );

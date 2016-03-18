@@ -68,6 +68,12 @@ public class SettingsController
     @Autowired
     private DAOMessicSettings daoSettings;
 
+    public SettingsController(final APIUser userAPI, final DAOMessicSettings daoSettings)
+    {
+        this.userAPI = userAPI;
+        this.daoSettings = daoSettings;
+    }
+
     @ApiMethod( path = "/services/settings", verb = ApiVerb.GET, description = "Get the user settings", produces = {
         MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE } )
     @ApiErrors( apierrors = { @ApiError( code = UnknownMessicRESTException.VALUE, description = "Unknown error" ),

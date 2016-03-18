@@ -25,6 +25,8 @@ import org.messic.server.facade.controllers.rest.exceptions.NotAuthorizedMessicR
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import java.util.Collections;
+
 public class SecurityUtil
 {
 
@@ -63,7 +65,8 @@ public class SecurityUtil
         {
             if ( !completeUser )
             {
-                User user = new User();
+                User user = new User( 1L, "usuarioGenresos", "", "", "user", "2345", false, false, false,
+                                      Collections.<User>emptyList() );
                 user.setLogin( auth.getName() );
                 return user;
             }

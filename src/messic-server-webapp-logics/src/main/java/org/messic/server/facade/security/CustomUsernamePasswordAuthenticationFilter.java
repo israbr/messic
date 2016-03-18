@@ -40,6 +40,7 @@ public class CustomUsernamePasswordAuthenticationFilter
     /**
 	 * 
 	 */
+    //TODO: kill this warning
     protected void successfulAuthentication( HttpServletRequest request, HttpServletResponse response,
                                              Authentication authResult )
         throws IOException, ServletException
